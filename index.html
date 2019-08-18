@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Rock, Paper, Scissors</title>
+</head>
+<body>
+  <script>
+      function computerPlay(){
+        let number = Math.floor(Math.random() * 3) + 1;
+        let computerSelection ="";
+        if (number == 1){
+            computerSelection = "Rock";
+        }
+        if (number ==2){
+            computerSelection = "Paper";
+        }
+        if (number ==3){
+            computerSelection = "Scissors";
+        }
+        return computerSelection;
+      }
+
+
+      function playRound(playerSelection, computerSelection, playerCount, computerCount){
+        playerSelection = playerSelection.toLowerCase();
+        let message = "";
+        if (playerSelection == "rock"){
+            if (computerSelection=="Rock"){
+                message = "Tie!";
+            }
+            if (computerSelection=="Scissors"){
+                message = "You win!";
+                playerCount = ++playerCount;
+            }
+            if (computerSelection=="Paper"){
+                message = "You lose!";
+                computerCount = ++computerCount;
+            }
+        }
+
+        if (playerSelection == "paper"){
+            if (computerSelection=="Rock"){
+                message = "You win!";
+                playerCount = ++playerCount;
+            }
+            if (computerSelection=="Scissors"){
+                message = "You lose!";
+                computerCount = ++computerCount;
+            }
+            if (computerSelection=="Paper"){
+                message = "Tie!";
+            }
+        }
+
+        if (playerSelection == "scissors"){
+            if (computerSelection=="Rock"){
+                message = "You lose!";
+                computerCount = ++computerCount;
+            }
+            if (computerSelection=="Scissors"){
+                message = "Tie!";
+            }
+            if (computerSelection=="Paper"){
+                message = "You win!";
+                playerCount = ++playerCount;
+            }
+        }
+        
+        return message;
+      
+      }
+
+      function game(){
+        let playerCount = 0;
+        let computerCount = 0;
+        //Round 1
+        var playerSelection = prompt("Rock, Paper, or Scissors?");
+        let computerSelection = computerPlay();
+        let result = playRound(playerSelection, computerSelection, playerCount, computerCount);
+        if (result == "You win!"){
+            playerCount = ++playerCount;
+        }
+        if (result == "You lose!"){
+            computerCount == ++computerCount;
+        }
+        console.log(result);
+        console.log("Player Count: " + playerCount);
+        console.log("Computer Count: " + computerCount);
+
+        //Round 2
+        var playerSelection = prompt("Rock, Paper, or Scissors?");
+        computerSelection = computerPlay();
+        result = playRound(playerSelection, computerSelection, playerCount, computerCount);
+        if (result == "You win!"){
+            playerCount = ++playerCount;
+        }
+        if (result == "You lose!"){
+            computerCount == ++computerCount;
+        }
+        console.log(result);
+        console.log("Player Count: " + playerCount);
+        console.log("Computer Count: " + computerCount);
+
+        //Round 3
+        var playerSelection = prompt("Rock, Paper, or Scissors?");
+        computerSelection = computerPlay();
+        result = playRound(playerSelection, computerSelection, playerCount, computerCount);
+        if (result == "You win!"){
+            playerCount = ++playerCount;
+        }
+        if (result == "You lose!"){
+            computerCount == ++computerCount;
+        }
+        console.log(result);
+        console.log("Player Count: " + playerCount);
+        console.log("Computer Count: " + computerCount);
+
+        //Round 4
+        var playerSelection = prompt("Rock, Paper, or Scissors?");
+        computerSelection = computerPlay();
+        result = playRound(playerSelection, computerSelection, playerCount, computerCount);
+        if (result == "You win!"){
+            playerCount = ++playerCount;
+        }
+        if (result == "You lose!"){
+            computerCount == ++computerCount;
+        }
+        console.log(result);
+        console.log("Player Count: " + playerCount);
+        console.log("Computer Count: " + computerCount);
+
+        //Round 5
+        var playerSelection = prompt("Rock, Paper, or Scissors?");
+        computerSelection = computerPlay();
+        result = playRound(playerSelection, computerSelection, playerCount, computerCount);
+        if (result == "You win!"){
+            playerCount = ++playerCount;
+        }
+        if (result == "You lose!"){
+            computerCount == ++computerCount;
+        }
+        console.log(result);
+        console.log("Player Count: " + playerCount);
+        console.log("Computer Count: " + computerCount);
+
+        //FINAL RESULTS
+        let final = "";
+        if (playerCount == computerCount){
+            final = "TIE";
+        }
+        if (playerCount>computerCount){
+            final = "YOU WIN";
+        }
+        if (playerCount<computerCount){
+            final = "YOU LOSE";
+        }
+
+        console.log(final);
+
+      }
+
+  </script>
+</body>
+</html>
